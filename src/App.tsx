@@ -1,19 +1,45 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/home/Home";
-import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/Signup";
 import NotFound from "./pages/error/NotFound";
+import ROUTES from "./consts/routes";
+import AuthRouter from "./pages/auth/AuthRouter";
+import RoutePage from "./pages/routes/RoutePage";
+import RouteRouter from "./pages/routes/RouteRouter";
+import AuthRoute from "./guards/AuthRoute";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/home/login" element={<Login />} />
-        <Route path="/home/signup" element={<Signup />} />
-        <Route path="*" element={<NotFound/>}/>
+        <Route path={ROUTES.HOME.ME} element={<Home />} />
+        <Route
+          path={ROUTES.AUTH.ME}
+          element={
+            <AuthRoute
+              redirectWhenSuccess={ROUTES.ROUTES.ME}
+              defaultRedirectWhenError={false}
+              showContent
+              persistant={true}
+            >
+              <Outlet />
+            </AuthRoute>
+          }
+        >
+          {AuthRouter}
+        </Route>
+        <Route
+          path={ROUTES.ROUTES.ME}
+          element={
+            <AuthRoute showContent>
+              <RoutePage />
+            </AuthRoute>
+          }
+        >
+          {RouteRouter}
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
