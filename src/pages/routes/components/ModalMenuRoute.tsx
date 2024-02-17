@@ -1,12 +1,17 @@
-import { Button, DatePicker, Form, Input, Modal } from "antd";
-import { useMutation, useQueryClient } from "react-query";
-import { createRoute } from "../../../services/routeService";
+import {
+  Button,
+  DatePicker,
+  Form,
+  Input,
+  Modal,
+  Select,
+  SelectProps,
+} from "antd";
+import { useMutation, useQuery } from "react-query";
 import { RoutePostRequest } from "../../../models/routeModel";
 import CACHE_KEYS from "../../../consts/cache-keys";
-import { addStopsInRoute } from "../../../services/stopService";
-import { useState } from "react";
-import { RouteStop } from "../../../models/stopModel";
-import StopSelector from "./StopSelector";
+import { getAllStops } from "../../../services/stopService";
+import { createRouteAndAddStops } from "../../../services/routeService";
 
 interface ModalMenuRouteProps {
   onClose: () => void;
@@ -14,25 +19,26 @@ interface ModalMenuRouteProps {
 }
 
 const ModalMenuRoute = ({ onClose, show = false }: ModalMenuRouteProps) => {
-  const queryClient = useQueryClient();
-  const [selectedStops, setSelectedStops] = useState<RouteStop[]>([]);
-  const { mutate: addStopToRoute } = useMutation({
-    mutationFn: addStopsInRoute,
-  });
   const { mutate } = useMutation({
-    mutationFn: (route: RoutePostRequest) =>
-      createRoute(route).then((res) => res.data),
-    onSuccess: (route) => {
-      addStopToRoute({
-        routeId: route.id,
-        routeStops: [...selectedStops],
-      });
+    mutationFn: createRouteAndAddStops,
+    onSuccess: () => {
       onClose();
     },
   });
-  const onSubmit = (route: RoutePostRequest) => {
+
+  const { data: stops } = useQuery([CACHE_KEYS.STOPS.LIST], () =>
+    getAllStops().then((res) => {
+      const options: SelectProps["options"] = res.data.map((option) => ({
+        label: option.name,
+        value: option.id,
+      }));
+
+      return options;
+    })
+  );
+
+  const onSubmit = (route: RoutePostRequest & { stops: number[] }) => {
     console.log(route);
-    queryClient.invalidateQueries([CACHE_KEYS.ROUTE.LIST]);
     mutate(route);
   };
 
@@ -72,12 +78,14 @@ const ModalMenuRoute = ({ onClose, show = false }: ModalMenuRouteProps) => {
         >
           <DatePicker format={"YYYY-MM-DD"} />
         </Form.Item>
-        <StopSelector
-          onChange={(data) => {
-            console.log(data);
-            setSelectedStops(data);
-          }}
-        />
+        <Form.Item
+          label="stops:"
+          name="stops"
+          rules={[{ required: true, message: "Select an stop!" }]}
+        >
+          <Select mode="multiple" options={stops} />
+        </Form.Item>
+
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" htmlType="submit">
             Submit

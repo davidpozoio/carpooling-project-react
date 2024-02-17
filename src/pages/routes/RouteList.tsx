@@ -23,6 +23,9 @@ const RouteList = () => {
           <Card key={route.id} hoverable title={route.name}>
             <span>{new Date(route.startDate).toDateString()}</span>
             <p>{route.description}</p>
+            {route.routeStop.map((routeStop) => {
+              return <Card.Grid>{routeStop.arriveHour}</Card.Grid>;
+            })}
           </Card>
         );
       })}

@@ -14,3 +14,5 @@ export interface RouteStop {
   arriveHour: string;
   stopId: number;
 }
+
+export interface RouteStopResponse extends RouteStop {}

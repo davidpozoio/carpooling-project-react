@@ -5,6 +5,7 @@ import {
   RoutePostRequest,
   RoutePostResponse,
 } from "../models/routeModel";
+import { addStopsInRoute } from "./stopService";
 
 export function getAllRoutes() {
   return axios.get<RouteGetResponse[]>(`${environment.BACKEND_HOST}/route`);
@@ -15,4 +16,19 @@ export function createRoute(route: RoutePostRequest) {
     `${environment.BACKEND_HOST}/route`,
     route
   );
+}
+
+export function createRouteAndAddStops(
+  route: RoutePostRequest & { stops: number[] }
+) {
+  return createRoute(route).then((res) => {
+    return addStopsInRoute({
+      routeId: res.data.id,
+      routeStops: route.stops.map((stop) => ({
+        stopId: stop,
+        arriveHour: "2023-10-10",
+        position: 1,
+      })),
+    });
+  });
 }
