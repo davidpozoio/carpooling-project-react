@@ -13,6 +13,9 @@ const ROUTES = {
   },
   ROUTES: {
     ME: "/routes",
+    get MY_ROUTES() {
+      return `${this.ME}/me`;
+    },
   },
 };
 

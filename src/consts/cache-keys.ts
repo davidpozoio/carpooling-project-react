@@ -1,6 +1,7 @@
 const CACHE_KEYS = {
   ROUTE: {
     LIST: "routes",
+    MY_ROUTES: "my-routes",
   },
   STOPS: {
     LIST: "stops",

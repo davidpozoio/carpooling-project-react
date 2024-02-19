@@ -11,6 +11,12 @@ export function getAllRoutes() {
   return axios.get<RouteGetResponse[]>(`${environment.BACKEND_HOST}/route`);
 }
 
+export function getAllMyRoutes() {
+  return axios.get<{ data: RouteGetResponse[] }>(
+    `${environment.BACKEND_HOST}/route/userRoutes`
+  );
+}
+
 export function createRoute(route: RoutePostRequest) {
   return axios.post<RoutePostResponse>(
     `${environment.BACKEND_HOST}/route`,
