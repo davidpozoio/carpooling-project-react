@@ -1,4 +1,40 @@
-.nav {
-  display: flex;
-  flex-direction: column;
+.route-layout {
+  display: grid;
+  grid-template-columns: [full-start] 30px [nav-content-start] 150px [nav-content-end] 30px [nav-end] 1fr [content-end] 30px[full-end];
+  grid-template-rows: 60px 1fr;
+  height: 100vh;
+}
+
+.route-layout > * {
+  grid-column: nav-end / content-end;
+}
+
+.route-layout > .--nav {
+  grid-column: full-start / nav-end;
+}
+
+.route-layout > .--full {
+  grid-column: full;
+}
+
+.route-layout > .--content {
+  grid-column: nav-end / full-end;
+}
+
+.route-layout > .--header {
+  grid-column: full;
+}
+
+.header {
+  background-color: black;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: [start] 30px [content-start]1fr [content-end]20px;
+  overflow: auto;
+}
+
+.content > * {
+  grid-column: content;
 }

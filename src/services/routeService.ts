@@ -38,3 +38,7 @@ export function createRouteAndAddStops(
     });
   });
 }
+
+export function deleteRoute(id: number) {
+  return axios.delete<string>(`${environment.BACKEND_HOST}/route/${id}`);
+}

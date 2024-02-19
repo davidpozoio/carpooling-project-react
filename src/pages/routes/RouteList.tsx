@@ -1,9 +1,8 @@
 import { useQuery } from "react-query";
 import { getAllRoutes } from "../../services/routeService";
-import { Card, Row, Typography } from "antd";
+import { Card, Row, Spin, Typography } from "antd";
 
 import CACHE_KEYS from "../../consts/cache-keys";
-import RouteListSkeleton from "./components/RouteListSkeleton";
 
 const RouteList = () => {
   const { data: routes, isLoading } = useQuery(
@@ -17,7 +16,7 @@ const RouteList = () => {
     <>
       <Typography.Title level={2}>All routes</Typography.Title>
       <Row gutter={[10, 10]} style={{ gap: "10px" }}>
-        {isLoading && <RouteListSkeleton />}
+        {isLoading && <Spin />}
 
         {routes?.length === 0 && <span>there is no routes</span>}
         {routes?.map((route) => {

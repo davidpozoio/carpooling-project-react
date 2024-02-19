@@ -7,7 +7,7 @@ import {
   Select,
   SelectProps,
 } from "antd";
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { RoutePostRequest } from "../../../models/routeModel";
 import CACHE_KEYS from "../../../consts/cache-keys";
 import { getAllStops } from "../../../services/stopService";
@@ -19,14 +19,18 @@ interface ModalMenuRouteProps {
 }
 
 const ModalMenuRoute = ({ onClose, show = false }: ModalMenuRouteProps) => {
+  const queryClient = useQueryClient();
+
   const { mutate } = useMutation({
     mutationFn: createRouteAndAddStops,
     onSuccess: () => {
+      queryClient.clear();
+      queryClient.refetchQueries();
       onClose();
     },
   });
 
-  const { data: stops } = useQuery([CACHE_KEYS.STOPS.LIST], () =>
+  const { data: stops, isLoading } = useQuery([CACHE_KEYS.STOPS.LIST], () =>
     getAllStops().then((res) => {
       const options: SelectProps["options"] = res.data.map((option) => ({
         label: option.name,
@@ -87,7 +91,7 @@ const ModalMenuRoute = ({ onClose, show = false }: ModalMenuRouteProps) => {
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" disabled={isLoading}>
             Submit
           </Button>
         </Form.Item>
