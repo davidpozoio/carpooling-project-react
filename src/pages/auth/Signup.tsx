@@ -28,14 +28,14 @@ const Signup = () => {
         <Form.Item
           label="Nombres:"
           name="firstName"
-          rules={[{ required: true, message: "Please input your first name!" }]}
+          rules={[{ required: true, message: "Porfavor a de ingresar sus nombres" }]}
         >
           <Input className={styles.inputField} />
         </Form.Item>
         <Form.Item
           label="Apellidos:"
           name="lastName"
-          rules={[{ required: true, message: "Please input your last name!" }]}
+          rules={[{ required: true, message: "Porfavor a de ingresar sus apellidos" }]}
         >
           <Input className={styles.inputField} />
         </Form.Item>
@@ -43,7 +43,7 @@ const Signup = () => {
         <Form.Item
           label="Numero Celular:"
           name="cellNumber"
-          rules={[{ required: true, message: "Please input your cell number!" }]}
+          rules={[{ required: true, message: "Porfavor a de ingresar su número celular" }]}
         >
           <Input className={styles.inputField} type="number" />
         </Form.Item>
@@ -52,7 +52,7 @@ const Signup = () => {
           label="Identificación:"
           name="identification"
           rules={[
-            { required: true, message: "Please input your identification!" },
+            { required: true, message: "Porfavor a de ingresar su identificación" },
           ]}
         >
           <Input className={styles.inputField} type="number" />
@@ -61,25 +61,25 @@ const Signup = () => {
         <Form.Item
           label="E-mail:"
           name="email"
-          rules={[{ required: true, message: "Please input your username!" }]}
+          rules={[{ required: true, message: "Porfavor a de ingresar la direacción de correo electronico" }]}
         >
           <Input className={styles.inputField} />
         </Form.Item>
         <Form.Item
           label="Contraseña:"
           name="password"
-          rules={[{ required: true, message: "Please input your password!" }]}
+          rules={[{ required: true, message: "Porfavor a de ingresar la contraseña" }]}
         >
           <Input.Password className={styles.inputField} type="password" />
         </Form.Item>
 
         <Form.Item
-          label="Confirmar Contraseña:"
+          label="Confirmar:"
           name="confirmPassword"
           rules={[
             {
               required: true,
-              message: "Please input your confirm password!",
+              message: "Porfavor a de confirmar la contraseña",
             },
           ]}
         >

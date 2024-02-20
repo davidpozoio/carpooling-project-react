@@ -12,8 +12,15 @@ body {
     gap: 20px;
     padding: 40px;
     margin-top: 60px;
-    font-family: 'Jomhuria', sans-serif;
-    margin-top: 80px;
+    font-family: 'Josefin Slab', sans-serif;
+    margin-top: 100px;
+    width: 550px;
+    height: 680px; 
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-left: auto; 
+    margin-right: auto;
+    background-color: white;
 }
   
 .inputField {
@@ -27,6 +34,7 @@ body {
 
 .label {
     font-size: 22px;
+    margin-bottom: 5px;
 }
   
 .button {
@@ -59,33 +67,4 @@ h2 {
     font-size: 28px;
     color: #000000;
     margin-bottom: 20px;
-}
-  
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    .inputField {
-        height: 50px;
-        font-size: 18px;
-    }
-
-    .label {
-        font-size: 20px;
-    }
-
-    .button,
-    .linkButton {
-        height: 50px;
-        font-size: 20px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
 }

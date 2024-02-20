@@ -5,22 +5,14 @@
   flex-direction: column;
   gap: 20px;
   padding: 40px;
-  margin-top: 400px;
-}
-
-.empieza-viajes {
-  position: absolute;
-  width: 276px;
-  height: 192px;
-  left: 34px;
-  top: 118px;
-  font-family: 'Josefin Slab', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 64px;
-  color: #17110D;
-  margin-top: 10px;
+  margin-top: 100px;
+  width: 400px;
+  height: 700px; 
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-left: auto; 
+  margin-right: auto;
+  background-color: white;
 }
 
 .link {
@@ -40,20 +32,9 @@
 .link.white {
   background-color: white;
   color: black;
+  border: 2px solid black;
 }
 
 .hideBackground {
   display: none !important;
-}
-
-@media (max-width: 600px) {
-    .container {
-      padding: 20px;
-    }
-    
-    .link {
-      width: 200px;
-      font-size: 18px;
-      padding: 15px 30px;
-    }
 }

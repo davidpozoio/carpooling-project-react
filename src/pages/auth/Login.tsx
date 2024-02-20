@@ -26,16 +26,16 @@ const Login = () => {
         autoComplete="off"
       > <h2>Iniciar Sesión</h2>
         <Form.Item
-          label="Email:"
+          label="E-mail:"
           name="email"
-          rules={[{ required: true, message: "Please input your username!" }]}
+          rules={[{ required: true, message: "Porfavor a de ingresar la direacción de correo electronico" }]}
         >
           <Input className={styles.inputField} />
         </Form.Item>
         <Form.Item
-          label="Password"
+          label="Contraseña"
           name="password"
-          rules={[{ required: true, message: "Please input your password!" }]}
+          rules={[{ required: true, message: "Porfavor a de ingresar la contraseña" }]}
         >
           <Input.Password className={styles.inputField} type="password" />
         </Form.Item>

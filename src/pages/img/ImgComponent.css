@@ -1,7 +1,7 @@
 .imgContainer {
     text-align: center;
-    margin-top: -240px;
-    margin-left: 150px;
+    margin-top: 150px;
+    margin-left: center;
 }
   
 .imgContainer img {
@@ -17,6 +17,8 @@
 }
 
 h3 {
-    margin-left: -50px;
-    margin-top: -20px;
-}
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+  }
