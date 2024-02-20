@@ -13,3 +13,36 @@
   height: 100%;
   background-color: rgba(255, 200, 98, 0.384);
 }
+
+.route-card-container {
+  margin-bottom: 20px;
+}
+
+.route-card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.route-card-delete-button {
+  color: #f5222d; /* Color rojo */
+}
+
+.route-card-content {
+  margin-top: 10px;
+}
+
+.route-card-date {
+  font-size: 14px;
+  color: #595959; /* Color gris */
+}
+
+.route-card-description {
+  margin-top: 5px;
+}
+
+.route-card-grid {
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+}

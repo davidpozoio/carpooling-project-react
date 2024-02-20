@@ -1,1 +1,12 @@
+.my-route-list-container {
+    position: fixed;
+    top: 15%;
+    left: 10%;
+    padding-left: 200px;
+}
 
+.float-button {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+}

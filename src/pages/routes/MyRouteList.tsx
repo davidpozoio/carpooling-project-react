@@ -17,23 +17,26 @@ const MyRouteList = () => {
   const { toggle, setTrue, setFalse } = useToggle(false);
 
   return (
-    <>
-      <Typography.Title level={2}>My routes</Typography.Title>
-      <Row gutter={[10, 10]} style={{ gap: "10px" }}>
-        {isLoading && <Spin />}
-        {<ModalMenuRoute show={toggle} onClose={() => setFalse()} />}
-        {routes?.length === 0 && <span>there is no routes</span>}
-        {routes?.map((route) => {
-          return <RouteCard key={route.id} route={route} />;
-        })}
-        <FloatButton
-          icon={<PlusOutlined />}
-          onClick={() => {
-            setTrue();
-          }}
-        />
-      </Row>
-    </>
+    <div className="my-route-list-container">
+      <>
+        <Typography.Title level={2}>Mis rutas</Typography.Title>
+        <Row gutter={[10, 10]} style={{ gap: "10px" }}>
+          {isLoading && <Spin />}
+          {<ModalMenuRoute show={toggle} onClose={() => setFalse()} />}
+          {routes?.length === 0 && <span className="no-routes-message">There are no routes</span>}
+          {routes?.map((route) => {
+            return <RouteCard key={route.id} route={route} />;
+          })}
+          <FloatButton
+            className="float-button" 
+            icon={<PlusOutlined />}
+            onClick={() => {
+              setTrue();
+            }}
+          />
+        </Row>
+      </>
+    </div>
   );
 };
 export default MyRouteList;
