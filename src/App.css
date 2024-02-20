@@ -1,3 +1,97 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Josefin+Slab&display=swap');
+
+h1 {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1:first-of-type {
+  position: absolute;
+  width: 58px;
+  height: 48px;
+  left: 34px;
+  top: 40px;
+  font-family: 'Jomhuria', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 48px;
+  color: #17110D;
+}
+
+h1:nth-of-type(2) {
+  position: absolute;
+  width: 66px;
+  height: 40px;
+  left: 92px;
+  top: 40px;
+  font-family: 'Josefin Slab', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  color: #17110D;
+}
+
+h3 {
+position: absolute;
+width: 276px;
+height: 192px;
+left: 34px;
+top: 118px;
+
+font-family: 'Josefin Slab';
+font-style: normal;
+font-weight: 600;
+font-size: 40px;
+line-height: 64px;
+
+color: #17110D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    color: #333;
+    margin: 0;
+}
+  
+#root {
+  background: linear-gradient(#FFBE2E 35%, white 10%);
+}
+  
+@media (max-width: 768px) {
+    #root {
+      background: linear-gradient(#FFBE2E 55%, white 50%);
+    }
+}
+  
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+header {
+    background-color: #007bff; 
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+  
+main {
+    flex: 1;
+    padding: 20px;
+}
+  
+footer {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }

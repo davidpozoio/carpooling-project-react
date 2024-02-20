@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  margin-top: 400px;
+}
+
+.empieza-viajes {
+  position: absolute;
+  width: 276px;
+  height: 192px;
+  left: 34px;
+  top: 118px;
+  font-family: 'Josefin Slab', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 64px;
+  color: #17110D;
+  margin-top: 10px;
+}
+
+.link {
+  text-decoration: none;
+  padding: 20px 40px;
+  border-radius: 500px;
+  text-align: center;
+  width: 300px;
+  font-size: 24px;
+}
+
+.link.black {
+  background-color: black;
+  color: white;
+}
+
+.link.white {
+  background-color: white;
+  color: black;
+}
+
+.hideBackground {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+    
+    .link {
+      width: 200px;
+      font-size: 18px;
+      padding: 15px 30px;
+    }
+}

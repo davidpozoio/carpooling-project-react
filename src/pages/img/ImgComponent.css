@@ -1,0 +1,22 @@
+.imgContainer {
+    text-align: center;
+    margin-top: -240px;
+    margin-left: 150px;
+}
+  
+.imgContainer img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+  
+.imgDescription {
+    font-size: 14px;
+    color: #666;
+}
+
+h3 {
+    margin-left: -50px;
+    margin-top: -20px;
+}

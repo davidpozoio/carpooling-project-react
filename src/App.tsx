@@ -11,6 +11,7 @@ import AuthRoute from "./guards/AuthRoute";
 function App() {
   return (
     <>
+      <h1>Aven</h1><h1>Tón</h1>
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path={ROUTES.HOME.ME} element={<Home />} />
