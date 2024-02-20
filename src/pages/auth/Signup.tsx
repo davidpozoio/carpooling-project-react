@@ -41,7 +41,7 @@ const Signup = () => {
         </Form.Item>
 
         <Form.Item
-          label="Numero Celular:"
+          label="Número Celular:"
           name="cellNumber"
           rules={[{ required: true, message: "Porfavor a de ingresar su número celular" }]}
         >
