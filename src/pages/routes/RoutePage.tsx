@@ -8,19 +8,22 @@ const RoutePage = () => {
     <div>
       <div className="route-layout">
         <div className="header --header"></div>
-        <div className="--nav">
-          <Button type="link" style={{ width: 200 }}>
-            <Link to={ROUTES.ROUTES.ME}>All routes</Link>
+        <div className="nav-container">
+          <Button type="link" className="menu-button">
+            <Link to={ROUTES.ROUTES.ME}>Todas Las Rutas</Link>
           </Button>
-          <Button type="link" style={{ width: 200 }}>
-            <Link to={ROUTES.ROUTES.MY_ROUTES}>My routes</Link>
+          <Button type="link" className="menu-button">
+            <Link to={ROUTES.ROUTES.MY_ROUTES}>Mis Rutas</Link>
           </Button>
         </div>
-        <div className="--content content">
-          <Outlet />
+        <div className="content-container">
+          <div className="--content content">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default RoutePage;

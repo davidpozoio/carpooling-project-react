@@ -30,14 +30,16 @@ const Login = () => {
           name="email"
           rules={[{ required: true, message: "Porfavor a de ingresar la direacción de correo electronico" }]}
         >
-          <Input className={styles.inputField} />
+          <Input className={styles.inputField}  
+                 placeholder="dav@gmail.com"/>
         </Form.Item>
         <Form.Item
           label="Contraseña"
           name="password"
           rules={[{ required: true, message: "Porfavor a de ingresar la contraseña" }]}
         >
-          <Input.Password className={styles.inputField} type="password" />
+          <Input.Password className={styles.inputField} type="password" 
+                          placeholder="1234"/>
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

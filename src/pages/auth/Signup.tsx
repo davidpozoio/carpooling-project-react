@@ -30,14 +30,16 @@ const Signup = () => {
           name="firstName"
           rules={[{ required: true, message: "Porfavor a de ingresar sus nombres" }]}
         >
-          <Input className={styles.inputField} />
+          <Input className={styles.inputField} 
+                 placeholder="David"/>
         </Form.Item>
         <Form.Item
           label="Apellidos:"
           name="lastName"
           rules={[{ required: true, message: "Porfavor a de ingresar sus apellidos" }]}
         >
-          <Input className={styles.inputField} />
+          <Input className={styles.inputField} 
+                 placeholder="Pozo"/>
         </Form.Item>
 
         <Form.Item
@@ -45,7 +47,8 @@ const Signup = () => {
           name="cellNumber"
           rules={[{ required: true, message: "Porfavor a de ingresar su número celular" }]}
         >
-          <Input className={styles.inputField} type="number" />
+          <Input className={styles.inputField} type="number" 
+                 placeholder="0987365724"/>
         </Form.Item>
 
         <Form.Item
@@ -55,7 +58,8 @@ const Signup = () => {
             { required: true, message: "Porfavor a de ingresar su identificación" },
           ]}
         >
-          <Input className={styles.inputField} type="number" />
+          <Input className={styles.inputField} type="number" 
+                 placeholder="0105869468"/>
         </Form.Item>
 
         <Form.Item
@@ -63,14 +67,16 @@ const Signup = () => {
           name="email"
           rules={[{ required: true, message: "Porfavor a de ingresar la direacción de correo electronico" }]}
         >
-          <Input className={styles.inputField} />
+          <Input className={styles.inputField} 
+                 placeholder="dav@gmail.com"/>
         </Form.Item>
         <Form.Item
           label="Contraseña:"
           name="password"
           rules={[{ required: true, message: "Porfavor a de ingresar la contraseña" }]}
         >
-          <Input.Password className={styles.inputField} type="password" />
+          <Input.Password className={styles.inputField} type="password" 
+                          placeholder="1234"/>
         </Form.Item>
 
         <Form.Item
@@ -83,7 +89,8 @@ const Signup = () => {
             },
           ]}
         >
-          <Input.Password className={styles.inputField} type="password" />
+          <Input.Password className={styles.inputField} type="password" 
+                          placeholder="1234"/>
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
